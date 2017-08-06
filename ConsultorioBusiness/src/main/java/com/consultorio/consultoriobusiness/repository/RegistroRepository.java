@@ -5,10 +5,12 @@
  */
 package com.consultorio.consultoriobusiness.repository;
 
+import com.consultorio.consultoriobusiness.entity.Registro;
+
 /**
  *
  * @author Jorge
  */
-public interface RegistroRepository extends Repository {
+public interface RegistroRepository extends Repository<Registro, Long> {
     
 }
