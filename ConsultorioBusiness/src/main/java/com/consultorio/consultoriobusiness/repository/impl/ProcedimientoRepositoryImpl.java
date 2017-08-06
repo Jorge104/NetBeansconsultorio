@@ -17,18 +17,21 @@ import java.util.List;
 public class ProcedimientoRepositoryImpl implements ProcedimientoRepository{
 
     
-    private final List<Procedimiento> procedimientoList=new ArrayList<>();
+    private List<Procedimiento> procedimientoList=new ArrayList<>();
     
+    @Override
     public void save (Procedimiento entity){
         procedimientoList.add(entity);
     }
 
+    @Override
     public void update(Procedimiento entity) {
         int index=procedimientoList.indexOf(entity);
         procedimientoList.add(entity);
     }
 
-    public Object findById(Long id) {
+    @Override
+    public Procedimiento findById(Long id) {
     return procedimientoList.get(id.intValue());
     }
 
@@ -36,20 +39,4 @@ public class ProcedimientoRepositoryImpl implements ProcedimientoRepository{
     public List findall() {
       return   procedimientoList;
     }
-
-    @Override
-    public void save(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object findById(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

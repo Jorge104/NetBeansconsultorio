@@ -14,23 +14,26 @@ import java.util.List;
  *
  * @author Jorge
  */
-public class CitaRepositoryImpl implements CitaRepository {
+public class CitaRepositoryImpl implements CitaRepository{
 
     private List<Cita> citaList=new ArrayList<>();
     
    
+    @Override
     public void save(Cita entity) {
         citaList.add(entity);
     }
 
   
+    @Override
     public void update(Cita entity) {
         int index=citaList.indexOf(this);
         citaList.set(index, entity);
     }
 
     
-    public Object findById(Long id) {
+    @Override
+    public Cita findById(Long id) {
     return citaList.get(id.intValue());
     }
 
@@ -39,19 +42,4 @@ public class CitaRepositoryImpl implements CitaRepository {
     return citaList;   
     }
 
-    @Override
-    public void save(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object findById(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

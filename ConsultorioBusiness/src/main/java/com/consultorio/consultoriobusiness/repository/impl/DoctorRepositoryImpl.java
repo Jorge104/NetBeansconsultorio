@@ -18,38 +18,24 @@ public class DoctorRepositoryImpl implements DoctorRepository{
     
     private List<Doctor> doctorList=new ArrayList<>();
     
-//    @Override
+    @Override
     public void save(Doctor entity) {
         doctorList.add(entity);
     }
-//    @Override
+    
+    @Override
     public void update(Doctor entity) {
         int index=doctorList.indexOf(entity);
         doctorList.add(entity);
     }
 
-//    @Override
-    public Object findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public Doctor findById(Long id) {
+    return doctorList.get(id.intValue());
     }
 
     @Override
     public List findall() {
     return doctorList; 
-    }
-
-    @Override
-    public void save(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object findById(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

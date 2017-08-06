@@ -19,16 +19,19 @@ public class PacienteRepositoryImpl implements PacienteRepository {
     private List<Paciente> pacienteList=new ArrayList<>();
     
     
+    @Override
     public void save(Paciente entity) {
        pacienteList.add(entity);
     }
 
+    @Override
     public void update(Paciente entity) {
       int index=pacienteList.indexOf(entity);
         pacienteList.add(entity);
     }
 
-    public Object findById(Long id) {
+    @Override
+    public Paciente findById(Long id) {
     return pacienteList.get(id.intValue());
     }
 
@@ -36,20 +39,4 @@ public class PacienteRepositoryImpl implements PacienteRepository {
     public List findall() {
     return pacienteList;     
     }
-
-    @Override
-    public void save(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void update(Object entity) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object findById(Object id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
