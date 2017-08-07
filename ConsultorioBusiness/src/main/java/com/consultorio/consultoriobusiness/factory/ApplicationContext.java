@@ -11,6 +11,7 @@ import com.consultorio.consultoriobusiness.repository.impl.CitaRepositoryImpl;
 import com.consultorio.consultoriobusiness.repository.impl.DoctorRepositoryImpl;
 import com.consultorio.consultoriobusiness.repository.impl.PacienteRepositoryImpl;
 import com.consultorio.consultoriobusiness.repository.impl.ProcedimientoRepositoryImpl;
+import com.consultorio.consultoriobusiness.repository.impl.RegistroRepositoryImpl;
 
 /**
  *
@@ -30,6 +31,8 @@ public class ApplicationContext {
                 return new CitaRepositoryImpl();
             case PROCEDIMIENTO_REPOSITORY:
                 return new ProcedimientoRepositoryImpl();
+            case REGISTRO_REPOSITORY:
+                return new RegistroRepositoryImpl();
             default:
                    return null;
         }
