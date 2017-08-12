@@ -28,6 +28,11 @@ public class BusinessException extends Exception{
     public BusinessException(Throwable cause) {
         super(cause);
     }
+
+    @Override
+    public String getMessage() {
+        return  message;
+    }
     
     
 }
